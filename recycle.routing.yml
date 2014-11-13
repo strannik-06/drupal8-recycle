@@ -1,0 +1,15 @@
+recycle.statistics:
+  path: /recycle/statistics
+  defaults:
+    _content: 'Drupal\recycle\Controller\BatterypackController::indexAction'
+    _title: 'Recycle statistics'
+  requirements:
+    _access: 'TRUE'
+
+recycle.form:
+  path: /batterypack/new
+  defaults:
+    _form: 'Drupal\recycle\Form\BatterypackForm'
+    _title: 'Add new batterypack'
+  requirements:
+    _access: 'TRUE'

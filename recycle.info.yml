@@ -1,0 +1,4 @@
+name: Recycle
+description: Demo module to test custom page with controller
+type: module
+core: 8.x

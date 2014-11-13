@@ -1,0 +1,4 @@
+services:
+    recycle.batterypack:
+        class: Drupal\recycle\Service\Batterypack
+        arguments: ['@database']

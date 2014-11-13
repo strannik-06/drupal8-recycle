@@ -1,0 +1,13 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function recycle_theme()
+{
+    $theme['recycle_index'] = array(
+        'variables' => array('batterypacks' => NULL),
+        'template' => 'recycle_index',
+    );
+
+    return $theme;
+}
