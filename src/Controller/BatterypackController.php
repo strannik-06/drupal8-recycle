@@ -3,6 +3,7 @@ namespace Drupal\recycle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
 use Drupal\recycle\Service\Batterypack as BatterypackService;
 
 class BatterypackController extends ControllerBase
@@ -35,9 +36,12 @@ class BatterypackController extends ControllerBase
      */
     public function indexAction()
     {
+        $addNewUrl = new Url('recycle.form');
+
         return array(
             '#theme' => 'recycle_index',
             '#batterypacks' => $this->service->getAllGroupedByType(),
+            '#add_new_url' => $addNewUrl->toString(),
         );
     }
 }

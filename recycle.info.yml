@@ -1,4 +1,4 @@
 name: Recycle
-description: Demo module to test custom page with controller
+description: Demo module to test adding and viewing recycle batterypacks
 type: module
 core: 8.x

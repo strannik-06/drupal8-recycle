@@ -4,6 +4,7 @@ namespace Drupal\recycle\Form;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\recycle\Service\Batterypack as BatterypackService;
 
 class BatterypackForm extends FormBase
@@ -40,6 +41,10 @@ class BatterypackForm extends FormBase
      */
     public function buildForm(array $form, FormStateInterface $form_state)
     {
+        $form['intro'] = array(
+            '#markup' => '<p>' . t('<a href="@url">List of results</a>',
+                    array('@url' => $this->getStatisticsUrl()->toString())) . '</p>',
+        );
         $form['type'] = array(
             '#type' => 'textfield',
             '#title' => t('Type'),
@@ -87,5 +92,15 @@ class BatterypackForm extends FormBase
 
         $this->service->insert($entry);
         drupal_set_message(t('Added new batterypack'));
+
+        $form_state->setRedirectUrl($this->getStatisticsUrl());
+    }
+
+    /**
+     * @return Url
+     */
+    protected function getStatisticsUrl()
+    {
+        return new Url('recycle.statistics');
     }
 }

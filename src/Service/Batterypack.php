@@ -29,10 +29,11 @@ class Batterypack
      * @return int
      * @throws \Exception
      */
-    public static function insert($entry) {
-        $return_value = NULL;
+    public static function insert($entry)
+    {
+        $returnValue = NULL;
         try {
-            $return_value = db_insert('recycle_batterypack')
+            $returnValue = db_insert('recycle_batterypack')
                 ->fields($entry)
                 ->execute();
         }
@@ -42,7 +43,8 @@ class Batterypack
                 '%query' => $e->query_string,
             )), 'error');
         }
-        return $return_value;
+
+        return $returnValue;
     }
 
     /**

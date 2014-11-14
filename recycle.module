@@ -5,7 +5,7 @@
 function recycle_theme()
 {
     $theme['recycle_index'] = array(
-        'variables' => array('batterypacks' => NULL),
+        'variables' => array('batterypacks' => NULL, 'add_new_url' => NULL),
         'template' => 'recycle_index',
     );
 
