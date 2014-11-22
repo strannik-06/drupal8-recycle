@@ -3,38 +3,37 @@
 /**
  * Implements hook_schema().
  */
-function recycle_schema()
-{
-    $schema['recycle_batterypack'] = array(
-        'description' => 'Custom table for batterypacks.',
-        'fields' => array(
-            'id' => array(
-                'type' => 'serial',
-                'not null' => true,
-                'description' => 'Primary Key: Unique batterypack ID.',
-            ),
-            'type' => array(
-                'type' => 'varchar',
-                'length' => 255,
-                'not null' => true,
-                'default' => '',
-                'description' => 'Type of batterypack.',
-            ),
-            'amount' => array(
-                'type' => 'int',
-                'not null' => true,
-                'default' => 1,
-                'description' => 'Amount of batterypacks.',
-            ),
-            'name' => array(
-                'type' => 'varchar',
-                'length' => 255,
-                'not null' => false,
-                'description' => 'The name of the person who adds a batterypack.',
-            ),
-        ),
-        'primary key' => array('id'),
-    );
+function recycle_schema() {
+  $schema['recycle_batterypack'] = array(
+    'description' => 'Custom table for batterypacks.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique batterypack ID.',
+      ),
+      'type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Type of batterypack.',
+      ),
+      'amount' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+        'description' => 'Amount of batterypacks.',
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'description' => 'The name of the person who adds a batterypack.',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
 
-    return $schema;
+  return $schema;
 }

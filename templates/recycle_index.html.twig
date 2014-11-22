@@ -1,15 +1,15 @@
 <section>
-    <p><a href="{{ add_new_url }}">Add new batterypack</a></p>
-    <table border="1">
-        <tr>
-            <th>Battery type</th>
-            <th>Total amount</th>
-        </tr>
-        {% for batterypack in batterypacks %}
-            <tr>
-                <td>{{ batterypack.type }}</td>
-                <td>{{ batterypack.total_amount }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+  <p><a href="{{ add_new_url }}">Add new batterypack</a></p>
+  <table border="1">
+    <tr>
+      <th>Battery type</th>
+      <th>Total amount</th>
+    </tr>
+    {% for batterypack in batterypacks %}
+      <tr>
+        <td>{{ batterypack.type }}</td>
+        <td>{{ batterypack.total_amount }}</td>
+      </tr>
+    {% endfor %}
+  </table>
 </section>
